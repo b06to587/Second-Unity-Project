@@ -19,10 +19,7 @@ obj/
 *.pidb
 *.booproj
 *.svd
-*.cs
-*.meta
-*.dll
-*cs.meta
+
 
 # OS Generated
 desktop.ini
