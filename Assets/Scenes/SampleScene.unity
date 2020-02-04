@@ -235,6 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   limitPoint1: {x: -2.29, y: 4.54}
   limitPoint2: {x: 2.29, y: -0.18}
+  nowPoint: 0
   enemySpeed: 10
   enemyHp: 10
 --- !u!212 &1874843827
