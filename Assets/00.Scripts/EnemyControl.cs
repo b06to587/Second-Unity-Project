@@ -13,7 +13,7 @@ public class EnemyControl : MonoBehaviour
     {
         point1,point2,point3,point4
     }
-    checkPoint nowPoint;
+    public checkPoint nowPoint;
 
 
 
@@ -50,10 +50,46 @@ public class EnemyControl : MonoBehaviour
 
         while(true)
         {
-            
-            Debug.Log("dd");
-            transform.position=Vector2.MoveTowards(transform.position,limitPoint1,enemySpeed*Time.deltaTime);
-              yield return null;
+            switch(nowPoint)
+            {
+                case checkPoint.point1:
+                
+                while(nowPoint==checkPoint.point1)
+                {
+                if(transform.position.y==limitPoint1.y) nowPoint=checkPoint.point2;
+                transform.position=Vector2.MoveTowards(transform.position,firstPoint,enemySpeed*Time.deltaTime);
+                yield return null;               
+                }
+                break;
+
+                case checkPoint.point2:                
+                while(nowPoint==checkPoint.point2)
+                {
+                if(transform.position.x==limitPoint2.x) nowPoint=checkPoint.point3;
+                transform.position=Vector2.MoveTowards(transform.position,secondPoint,enemySpeed*Time.deltaTime);
+                yield return null;
+                }
+                break;
+
+                case checkPoint.point3:                
+                while(nowPoint==checkPoint.point3)
+                {
+                if(transform.position.y==limitPoint2.y) nowPoint=checkPoint.point4;
+                transform.position=Vector2.MoveTowards(transform.position,finalPoint,enemySpeed*Time.deltaTime);
+                yield return null;
+                }
+                break;
+
+                case checkPoint.point4:                
+                while(nowPoint==checkPoint.point4)
+                {
+                if(transform.position.x==limitPoint1.x) nowPoint=checkPoint.point1;
+                transform.position=Vector2.MoveTowards(transform.position,startPoint,enemySpeed*Time.deltaTime);
+                yield return null;
+                }
+                break;
+            }
+
         }
            
        yield return null;
